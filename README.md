@@ -30,6 +30,8 @@ Flash the latest (Jessie at time of writing) Rasbian to an SD Card, and go throu
     sudo pip install paho-mqtt wiringpi2
 ```
 
+Create an Adafruit account if you don't have one, and sign into io.adafruit.com to get your Adafruit.io account started. You'll create a feed for the switch messages, and another feed if you want to send rotation messages to the servo. Copy the config.default file to .config and populate it with your adafruit key, username and feed ids. 
+
 Run
 ---
 

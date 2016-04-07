@@ -1,0 +1,8 @@
+{
+  "AIO_KEY" : "abc123abc123abc123abc123abc123abc123abc123",
+  "MQTT_HOST": "io.adafruit.com",
+  "MQTT_PORT": 1883,
+  "AIO_USERNAME": "your-adafruit-username",
+  "AIO_FEED": "switch-feed-id",
+  "AIO_ROTATE_FEED": "servo-rotation-feed-id"
+}
