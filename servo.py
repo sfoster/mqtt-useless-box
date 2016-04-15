@@ -36,7 +36,7 @@ ROTATE_NEUTRAL = 90
 PWM_RANGE = 1024
 PWM_CLOCK = 375
 TICK_S = 0.5
-MESSAGE_DELIM = '\t'
+MESSAGE_DELIM = ';'
 
 last_ts = 0
 
@@ -81,14 +81,17 @@ def on_message(aioClient, feed_id, msg):
 		if ((feed_id == aio_switch_feedid) 
 		and (ts > last_ts)  
 		and (feed_id == aio_switch_feedid)  
-	       	and (value == 1)
 		):
+	       	  if(value == 1):
 			print "%s: switch is on, turn it off" % feed_id 
-			rotate_arm(180)
+			rotate_arm(175)
 			time.sleep(TICK_S)
 			rotate_arm(ROTATE_NEUTRAL)
 			time.sleep(TICK_S)
 			wiringpi.pwmWrite(PWM_PIN, 0)
+			last_ts = time.time()
+		  else:
+			print "%s switch is off" % feed_id
 			last_ts = time.time()
 
 		elif (
@@ -99,7 +102,7 @@ def on_message(aioClient, feed_id, msg):
 			wiringpi.pwmWrite(PWM_PIN, 0)
 			last_ts = time.time()
 	except ValueError:
-		print "%s: bad switch message: %s" % msg 
+		print "%s: bad switch message: %s" % (feed_id, msg)
 
 def rotate_arm(angle=ROTATE_NEUTRAL):
 	global rotation

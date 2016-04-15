@@ -35,7 +35,7 @@ IO_PIN=17
 TICK_S = 0.5
 switch_state = None
 last_ts = time.time()
-MESSAGE_DELIM = '\t'
+MESSAGE_DELIM = ';'
 
 def on_switch_interrupt():
 	global last_ts

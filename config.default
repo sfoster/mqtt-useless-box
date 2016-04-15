@@ -1,8 +1,8 @@
 {
-  "AIO_KEY" : "abc123abc123abc123abc123abc123abc123abc123",
+  "AIO_KEY" : "234567567654321012334567654321012349064e6",
   "MQTT_HOST": "io.adafruit.com",
   "MQTT_PORT": 1883,
-  "AIO_USERNAME": "your-adafruit-username",
-  "AIO_FEED": "switch-feed-id",
-  "AIO_ROTATE_FEED": "servo-rotation-feed-id"
+  "AIO_USERNAME": "your-username",
+  "AIO_FEED": "useless-toggle",
+  "AIO_ROTATE_FEED": "useless-switch-rotate"
 }
